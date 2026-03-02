@@ -22,7 +22,7 @@ var target_offset = 0x12345;
 var trace_file_name = "trace.txt";
 
 // libgumTVM.dylib 在设备上的路径
-var dylib_remote_path = "/var/mobile/gumTVM/libgumTVM.dylib";
+var dylib_remote_path = "/var/tmp/gumTVM/libgumTVM.dylib";
 
 // 配置文件路径 (如果使用自动配置模式，确保此文件存在)
 var config_remote_path = "/tmp/gumTVM/trace_config.json";

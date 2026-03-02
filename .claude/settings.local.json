@@ -10,7 +10,8 @@
       "Bash(chmod +x:*)",
       "Bash(./scripts/build_ios.sh:*)",
       "Bash(file:*)",
-      "Bash(nm:*)"
+      "Bash(nm:*)",
+      "Bash(frida-ls-devices:*)"
     ]
   }
 }

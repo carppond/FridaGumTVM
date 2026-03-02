@@ -70,7 +70,8 @@ static bool load_config_from_file(const char* path,
 
 static const char* config_search_paths[] = {
     "/tmp/gumTVM/trace_config.json",        // 通用路径
-    "/var/mobile/gumTVM/trace_config.json",  // 越狱设备
+    "/var/tmp/gumTVM/trace_config.json",    // RootHide 越狱
+    "/var/mobile/gumTVM/trace_config.json", // 传统越狱
     nullptr
 };
 
