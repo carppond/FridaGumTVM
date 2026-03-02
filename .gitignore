@@ -1,0 +1,17 @@
+# Build output
+build/
+
+# Reference repo
+gumTVM-ref/
+
+# IDE
+.vscode/
+.idea/
+*.xcworkspace
+*.xcuserdata
+
+# macOS
+.DS_Store
+
+# Claude
+.claude_resumes.txt

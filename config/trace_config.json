@@ -1,0 +1,6 @@
+{
+    "target_module": "TargetApp",
+    "trace_offset": "0x12345",
+    "output_file": "trace.txt",
+    "additional_modules": []
+}

@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh repo:*)",
+      "Bash(gh api repos/revercc/gumTVM/git/trees/main?recursive=1 2>&1 || gh api repos/revercc/gumTVM/git/trees/master?recursive=1 2>&1)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:api.github.com)",
+      "Bash(git clone:*)",
+      "Bash(chmod +x:*)",
+      "Bash(./scripts/build_ios.sh:*)",
+      "Bash(file:*)",
+      "Bash(nm:*)"
+    ]
+  }
+}

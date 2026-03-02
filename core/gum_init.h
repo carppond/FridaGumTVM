@@ -1,0 +1,4 @@
+#ifndef GUMTVM_GUM_INIT_H
+#define GUMTVM_GUM_INIT_H
+
+#endif // GUMTVM_GUM_INIT_H
