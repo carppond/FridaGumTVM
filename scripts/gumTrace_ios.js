@@ -23,6 +23,12 @@ var target_offset = 0x12345;
 // --- 通用 ---
 var trace_file_name = "trace.txt";
 
+// --- 跨模块追踪 ---
+// 排除不想追踪的模块 (如 ["AnalyticsSDK", "CrashReporter.framework"])
+var exclude_modules = [];
+// 强制追踪的系统库 (如 ["libcommonCrypto.dylib", "libSystem.B.dylib"])
+var include_modules = [];
+
 // ==================== 加载逻辑 ====================
 
 function getAppTmpDir() {
@@ -56,6 +62,29 @@ function loadGumTVM() {
         console.log("    cp /var/tmp/gumTVM/libgumTVM.dylib " + dylibPath);
         console.log("    ldid -S " + dylibPath);
         return false;
+    }
+}
+
+// ==================== 跨模块配置 ====================
+
+function configureModuleFilters() {
+    var exclude_fn_ptr = Module.findExportByName("libgumTVM.dylib", "gum_trace_exclude_module");
+    var include_fn_ptr = Module.findExportByName("libgumTVM.dylib", "gum_trace_include_module");
+
+    if (exclude_fn_ptr && exclude_modules.length > 0) {
+        var exclude_fn = new NativeFunction(exclude_fn_ptr, 'void', ['pointer']);
+        for (var i = 0; i < exclude_modules.length; i++) {
+            exclude_fn(Memory.allocUtf8String(exclude_modules[i]));
+            console.log("[*] Exclude: " + exclude_modules[i]);
+        }
+    }
+
+    if (include_fn_ptr && include_modules.length > 0) {
+        var include_fn = new NativeFunction(include_fn_ptr, 'void', ['pointer']);
+        for (var i = 0; i < include_modules.length; i++) {
+            include_fn(Memory.allocUtf8String(include_modules[i]));
+            console.log("[*] Force-include: " + include_modules[i]);
+        }
     }
 }
 
@@ -134,6 +163,9 @@ function main() {
     console.log("========================================");
 
     if (!loadGumTVM()) return;
+
+    // 配置跨模块追踪过滤器
+    configureModuleFilters();
 
     setTimeout(function() {
         if (trace_mode === "objc") {

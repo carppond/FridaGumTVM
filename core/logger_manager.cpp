@@ -38,9 +38,11 @@ void LoggerManager::set_enable_to_file(bool enable, const std::string& file_name
                 std::string trace_dir = get_log_directory();
                 trace_file_name = trace_dir + file_name;
             }
+            // 先设缓冲再 open（标准要求 pubsetbuf 在 open 之前调用）
+            trace_out.rdbuf()->pubsetbuf(write_buf, sizeof(write_buf));
             trace_out.open(trace_file_name, std::ios::out);
             if (trace_out.is_open()) {
-                LOGI("Trace file opened: %s", trace_file_name.c_str());
+                LOGI("Trace file opened: %s (buf=256KB)", trace_file_name.c_str());
             } else {
                 LOGE("Failed to open trace file: %s", trace_file_name.c_str());
             }

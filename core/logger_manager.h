@@ -33,6 +33,7 @@ private:
     std::string trace_file_name;
     std::string module_name;
     module_range_t module_range;
+    char write_buf[256 * 1024] = {};  // 256KB 写缓冲
 };
 
 #endif // GUMTVM_LOGGER_MANAGER_H

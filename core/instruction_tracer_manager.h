@@ -4,6 +4,7 @@
 #include <frida-gum.h>
 #include <fstream>
 #include <map>
+#include <set>
 #include <string>
 #include "common.h"
 #include "logger_manager.h"
@@ -63,6 +64,23 @@ public:
     std::map<std::string, bool>& get_trace_other_modules();
     std::map<std::string, std::pair<size_t, size_t>>& get_trace_other_modules_range();
 
+    // 智能跨模块追踪
+    struct CachedModuleInfo {
+        uintptr_t base;
+        uintptr_t end;
+        std::string name;
+        bool should_trace;
+    };
+
+    bool should_trace_address(uintptr_t addr);
+    void add_exclude_module(const std::string& name);
+    void add_include_module(const std::string& name);
+    static bool is_system_library(const char* path);
+    // 通过范围缓存查找模块信息（O(log n)，无 dladdr）
+    const CachedModuleInfo* find_module_for_address(uintptr_t addr);
+    // 获取模块基址（优先缓存，fallback dladdr）
+    uintptr_t get_module_base_for_address(uintptr_t addr);
+
     [[nodiscard]] module_range_t get_module_range() const;
     void set_stubs_range(std::pair<size_t, size_t> range);
     [[nodiscard]] std::pair<size_t, size_t> get_stubs_range() const;
@@ -86,6 +104,8 @@ public:
     bool is_stub_jmp;
     // 寄存器计数器
     RegisterCounter reg_counter;
+    // 模块切换追踪: 上一条指令所在模块基址
+    uintptr_t last_module_base = 0;
     // 内存地址计数器
     MemoryAddressCounter mem_counter;
 
@@ -105,9 +125,16 @@ private:
     // iOS: __stubs 和 __stub_helper 范围（替代 Android 的 PLT）
     std::pair<size_t, size_t> stubs_range;
     std::pair<size_t, size_t> stub_helper_range;
-    // 其他需要追踪的模块
+    // 其他需要追踪的模块（手动添加）
     std::map<std::string, bool> trace_other_modules;
     std::map<std::string, std::pair<size_t, size_t>> trace_other_modules_range;
+
+    // 智能跨模块追踪
+    std::set<std::string> exclude_modules;   // 排除列表
+    std::set<std::string> include_modules;   // 强制追踪列表（系统库）
+    // 缓存: 模块基址 → 模块信息（含范围，用于 O(log n) 地址查找）
+    std::map<uintptr_t, CachedModuleInfo> module_trace_cache;
+    uintptr_t self_module_base = 0;  // libgumTVM.dylib 自身基址
 };
 
 #endif // GUMTVM_INSTRUCTION_TRACER_MANAGER_H

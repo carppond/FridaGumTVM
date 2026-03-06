@@ -137,3 +137,19 @@ void gum_trace(const char* module_name, uintptr_t offset, const char* trace_file
     bool ret = instance->run_attach();
     LOGI("run_attach result: %s", ret ? "success" : "failed");
 }
+
+extern "C"
+__attribute__((visibility("default")))
+void gum_trace_exclude_module(const char* module_name) {
+    if (!module_name) return;
+    auto instance = InstructionTracerManager::get_instance();
+    instance->add_exclude_module(std::string(module_name));
+}
+
+extern "C"
+__attribute__((visibility("default")))
+void gum_trace_include_module(const char* module_name) {
+    if (!module_name) return;
+    auto instance = InstructionTracerManager::get_instance();
+    instance->add_include_module(std::string(module_name));
+}

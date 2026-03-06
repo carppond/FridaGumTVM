@@ -1,6 +1,7 @@
 #include "custom_hook.h"
 #include <frida-gum.h>
 #include <unistd.h>
+#include <sstream>
 #include "common.h"
 #include "instruction_tracer_manager.h"
 
@@ -14,6 +15,16 @@ static void start_trace(GumInvocationContext* ic, gpointer user_data) {
     LOGI("gumTVM trace started on thread: %llu", (unsigned long long)tid);
     trace_is_running = true;
     self->set_trace_tid(tid);
+    self->last_module_base = self->get_module_range().base;
+
+    // 写入 trace 文件: 函数入口标记
+    std::stringstream marker;
+    marker << "==================== TRACE START ====================\n"
+           << "  module: " << self->get_module_name() << "\n"
+           << "  thread: " << tid << "\n"
+           << "=====================================================\n";
+    self->get_logger_manager()->write_info(marker);
+
     self->follow();
 }
 
@@ -39,6 +50,12 @@ void hook_common_leave(GumInvocationContext* ic, gpointer user_data) {
         tid_call_sum--;
         if (tid_call_sum == 0) {
             LOGI("gumTVM trace finished on thread: %llu", (unsigned long long)tid);
+
+            // 写入 trace 文件: 函数出口标记
+            std::stringstream marker;
+            marker << "==================== TRACE END ======================\n";
+            self->get_logger_manager()->write_info(marker);
+
             if (!repeat_trace) {
                 self->unfollow();
                 gum_interceptor_detach(self->get_gum_interceptor(),

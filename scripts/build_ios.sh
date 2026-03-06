@@ -61,9 +61,13 @@ if [ -f "$DYLIB_PATH" ]; then
     echo "Size: $(ls -lh "$DYLIB_PATH" | awk '{print $5}')"
     echo ""
 
-    # Ad-hoc 签名
-    codesign -fs - "$DYLIB_PATH" 2>/dev/null || true
-    echo "Ad-hoc signed: $DYLIB_PATH"
+    # ldid 签名（RootHide 越狱需要）
+    if command -v ldid &>/dev/null; then
+        ldid -S "$DYLIB_PATH"
+        echo "ldid signed: $DYLIB_PATH"
+    else
+        echo "⚠️  ldid not found, please run: ldid -S $DYLIB_PATH"
+    fi
 else
     echo "❌ Build failed: dylib not found"
     exit 1

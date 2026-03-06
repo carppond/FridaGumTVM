@@ -446,27 +446,9 @@ void transform_callback(GumStalkerIterator* iterator, GumStalkerOutput* output, 
         return;
     }
 
-    // 动态添加其他待追踪模块
-    auto& other_modules = self->get_trace_other_modules();
-    for (auto& [name, status] : other_modules) {
-        if (!status) {
-            GumModule* gum_module = gum_process_find_module_by_name(name.c_str());
-            if (gum_module != nullptr) {
-                const GumMemoryRange* range = gum_module_get_range(gum_module);
-                self->add_trace_other_module_range_entry(
-                    name, std::make_pair((size_t)range->base_address,
-                                         (size_t)(range->base_address + range->size)));
-                other_modules[name] = true;
-                g_object_unref(gum_module);
-            }
-        }
-    }
-
     cs_insn* p_insn;
     while (gum_stalker_iterator_next(iterator, (const cs_insn**)&p_insn)) {
-        if (!is_lse(p_insn) &&
-            (self->is_address_in_module_range(p_insn->address) ||
-             self->is_address_in_other_module_range(p_insn->address))) {
+        if (!is_lse(p_insn) && self->should_trace_address(p_insn->address)) {
 
             auto* instruction_info = new InstructionInfo(p_insn, gum_stalker_iterator_get_capstone(iterator));
             gum_stalker_iterator_put_callout(iterator,
@@ -526,25 +508,36 @@ void instruction_callback(GumCpuContext* context, void* user_data) {
         self->write_reg_list.num = 0;
     }
 
-    // 输出当前指令地址和反汇编信息
+    // 输出当前指令地址和反汇编信息（全部从缓存读取，无 dladdr）
     std::stringstream disasm_info;
-    uint64_t current_ins_base = self->get_module_range().base;
+
+    uintptr_t current_module_base = 0;
+    const char* current_module_name = nullptr;
 
     if (self->is_address_in_module_range(ctx->pc)) {
-        disasm_info << "0x" << std::left << std::setw(8) << std::hex << (ctx->pc - current_ins_base) << "   "
+        current_module_base = self->get_module_range().base;
+        current_module_name = self->get_module_name().c_str();
+        disasm_info << "0x" << std::left << std::setw(8) << std::hex << (ctx->pc - current_module_base) << "   "
                     << std::left << insn_info->insn_copy.mnemonic << "\t"
                     << insn_info->insn_copy.op_str;
     } else {
-        auto& other_modules_range = self->get_trace_other_modules_range();
-        for (const auto& [name, range] : other_modules_range) {
-            if (ctx->pc > range.first && ctx->pc < range.second) {
-                current_ins_base = range.first;
-            }
-        }
-        disasm_info << "0x" << std::left << std::setw(8) << std::hex << ctx->pc
-                    << "(" << (ctx->pc - current_ins_base) << ")    "
+        auto* mod_info = self->find_module_for_address(ctx->pc);
+        current_module_name = mod_info ? mod_info->name.c_str() : "???";
+        current_module_base = mod_info ? mod_info->base : 0;
+        disasm_info << "[" << current_module_name << "] 0x" << std::left << std::setw(8) << std::hex
+                    << (ctx->pc - current_module_base) << "   "
                     << std::left << insn_info->insn_copy.mnemonic << "\t"
                     << insn_info->insn_copy.op_str;
+    }
+
+    // 模块切换检测: base 变化时输出分隔标记
+    if (current_module_base != 0 && current_module_base != self->last_module_base) {
+        std::stringstream switch_marker;
+        switch_marker << "---------- >> " << current_module_name
+                      << " (0x" << std::hex << current_module_base << ")"
+                      << " ----------\n";
+        out_info << switch_marker.str();
+        self->last_module_base = current_module_base;
     }
 
     // 计算跳转指令的偏移
@@ -552,7 +545,13 @@ void instruction_callback(GumCpuContext* context, void* user_data) {
         cs_insn_group(insn_info->handle, &insn_info->insn_copy, CS_GRP_CALL) ||
         cs_insn_group(insn_info->handle, &insn_info->insn_copy, CS_GRP_RET)) {
         if (insn_info->detail_copy->arm64.operands[0].type == ARM64_OP_IMM) {
-            disasm_info << "(0x" << std::hex << insn_info->detail_copy->arm64.operands[0].imm - current_ins_base << ")";
+            uintptr_t imm_target = (uintptr_t)insn_info->detail_copy->arm64.operands[0].imm;
+            uintptr_t target_base = self->get_module_base_for_address(imm_target);
+            if (target_base != 0) {
+                disasm_info << "(0x" << std::hex << (imm_target - target_base) << ")";
+            } else {
+                disasm_info << "(0x" << std::hex << imm_target << ")";
+            }
         }
     }
 
@@ -733,8 +732,7 @@ void instruction_callback(GumCpuContext* context, void* user_data) {
 #ifdef __arm64e__
         jmp_addr = (uint64_t)ptrauth_strip((void*)jmp_addr, ptrauth_key_asia);
 #endif
-        if (self->is_address_in_module_range((uintptr_t)jmp_addr) ||
-            self->is_address_in_other_module_range((uintptr_t)jmp_addr)) {
+        if (self->should_trace_address((uintptr_t)jmp_addr)) {
             jmp_addr = 0;
         }
     }
