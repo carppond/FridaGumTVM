@@ -1,0 +1,949 @@
+0x51470      stur	x1, [x29, #-0x10]   ;r[x1_1=0x10109b59e] r[fp_2=0x16f4a1240] 
+   mem[w]_1 addr[ 0x16f4a1230 ] size:8 value:0x10109b59e
+0x51474      adrp	x9, #0x1010ed000   ;
+	 w[x9_3=0x1010ed000 ]
+Hexdump for x9 at address 0x1010ed000:
+00000001010ed000: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+00000001010ed010: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+0x51478      ldr	x8, [x9, #0xcc0]   ;r[x9_4=0x1010ed000] 
+   mem[r]_2 addr[ 0x1010edcc0 ] size:8 value:0x0
+	 w[x8_5=0x0 ]
+0x5147c      add	x8, x8, #1   ;r[x8_6=0x0] 
+	 w[x8_7=0x1 ]
+0x51480      str	x8, [x9, #0xcc0]   ;r[x8_8=0x1] r[x9_9=0x1010ed000] 
+   mem[w]_3 addr[ 0x1010edcc0 ] size:8 value:0x1
+0x51484      adrp	x8, #0x1010e4000   ;
+	 w[x8_10=0x1010e4000 ]
+Hexdump for x8 at address 0x1010e4000:
+00000001010e4000: fe 1b 0a 01 01 00 00 00  f0 8f 09 01 01 00 00 00  |................|
+00000001010e4010: d2 9d db cf 01 00 00 00  29 0a 31 d0 01 00 00 00  |........).1.....|
+0x51488      ldr	x0, [x8, #0x8b8]   ;r[x8_11=0x1010e4000] 
+   mem[r]_4 addr[ 0x1010e48b8 ] size:8 value:0x1010e5c40
+	 w[x0_12=0x1010e5c40 ]
+Hexdump for x0 at address 0x1010e5c40:
+00000001010e5c40: 68 5c 0e 01 01 00 00 00  60 5a 0e 01 01 00 00 00  |h\......`Z......|
+00000001010e5c50: a0 99 a5 cd 01 00 00 00  00 00 00 00 00 00 00 00  |................|
+0x5148c      bl	#0x10106810c(0x17810c)   ;
+0x17810c     adrp	x16, #0x1010b5000   ;
+	 w[x16_13=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x178110     ldr	x16, [x16, #0x3d0]   ;r[x16_14=0x1010b5000] 
+   mem[r]_5 addr[ 0x1010b53d0 ] size:8 value:0x1cda330a8
+	 w[x16_15=0x1cda330a8 ]
+Hexdump for x16 at address 0x1cda330a8:
+00000001cda330a8: 7f 23 03 d5 fd 7b bf a9  fd 03 00 91 c0 01 00 b4  |.#...{..........|
+00000001cda330b8: 08 00 40 f9 08 81 7d 92  08 3d c0 79 48 01 f8 36  |..@...}..=.yH..6|
+0x178114     br	x16   ;r[x16_16=0x1cda330a8] 
+call addr: 1cda330a8 [libobjc.A.dylib!objc_opt_new]
+0x51490      ldr	x1, [sp, #0x38]   ;r[sp_17=0x16f4a11b0] 
+   mem[r]_6 addr[ 0x16f4a11e8 ] size:8 value:0x0
+	 w[x1_18=0x0 ]
+0x51494      sub	x8, x29, #0x18   ;r[fp_19=0x16f4a1240] 
+	 w[x8_20=0x16f4a1228 ]
+Hexdump for x8 at address 0x16f4a1228:
+000000016f4a1228: 00 00 00 00 00 00 00 00  9e b5 09 01 01 00 00 00  |................|
+000000016f4a1238: f0 d7 c0 00 01 00 00 00  70 12 4a 6f 01 00 00 00  |........p.Jo....|
+0x51498      stur	x8, [x29, #-0x30]   ;r[x8_21=0x16f4a1228] r[fp_22=0x16f4a1240] 
+   mem[w]_7 addr[ 0x16f4a1210 ] size:8 value:0x16f4a1228
+0x5149c      stur	x0, [x29, #-0x18]   ;r[x0_23=0x10133b9d0] r[fp_24=0x16f4a1240] 
+   mem[w]_8 addr[ 0x16f4a1228 ] size:8 value:0x10133b9d0
+0x514a0      ldur	x0, [x29, #-8]   ;r[fp_25=0x16f4a1240] 
+   mem[r]_9 addr[ 0x16f4a1238 ] size:8 value:0x100c0d7f0
+	 w[x0_26=0x100c0d7f0 ]
+Hexdump for x0 at address 0x100c0d7f0:
+0000000100c0d7f0: d5 5d 0e 01 01 00 00 05  00 00 00 00 00 00 00 00  |.]..............|
+0000000100c0d800: 00 00 00 00 00 00 00 00  b0 db c0 00 01 00 00 00  |................|
+0x514a4      bl	#0x101070120(0x180120)   ;
+call addr: 101070120 [Automation.debug.dylib!objc_msgSend$navigationController]
+0x180120     adrp	x1, #0x1010e1000   ;
+	 w[x1_27=0x1010e1000 ]
+Hexdump for x1 at address 0x1010e1000:
+00000001010e1000: f8 8f 41 d0 01 00 00 00  f8 da 28 d0 01 00 00 00  |..A.......(.....|
+00000001010e1010: f8 fe 98 d0 01 00 00 00  f8 f3 09 01 01 00 00 00  |................|
+0x180124     ldr	x1, [x1, #0x40]   ;r[x1_28=0x1010e1000] 
+   mem[r]_10 addr[ 0x1010e1040 ] size:8 value:0x1d04dfdf8
+	 w[x1_29=0x1d04dfdf8 ]
+String for x1 at address 0x1d04dfdf8 : navigationController
+0x180128     adrp	x16, #0x1010b5000   ;
+	 w[x16_30=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x18012c     ldr	x16, [x16, #0x3b0]   ;r[x16_31=0x1010b5000] 
+   mem[r]_11 addr[ 0x1010b53b0 ] size:8 value:0x1cda25c00
+	 w[x16_32=0x1cda25c00 ]
+Hexdump for x16 at address 0x1cda25c00:
+00000001cda25c00: 1f 00 00 f1 6d 06 00 54  0e 00 40 f9 d0 cd 7d 92  |....m..T..@...}.|
+00000001cda25c10: ea 03 00 aa 2a 5c ed f2  50 19 c1 da ef 03 10 aa  |....*\..P.......|
+0x180130     br	x16   ;r[x16_33=0x1cda25c00] 
+call addr: 1cda25c00 [libobjc.A.dylib!objc_msgSend]
+0x514a8      mov	x29, x29   ;r[fp_34=0x16f4a1240] 
+	 w[fp_35=0x16f4a1240 ]
+Hexdump for fp at address 0x16f4a1240:
+000000016f4a1240: 70 12 4a 6f 01 00 00 00  0c c0 82 2b 01 00 00 00  |p.Jo.......+....|
+000000016f4a1250: 00 00 a9 82 02 00 00 00  9e b5 09 01 01 00 00 00  |................|
+0x514ac      bl	#0x101068160(0x178160)   ;
+0x178160     adrp	x16, #0x1010b5000   ;
+	 w[x16_36=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x178164     ldr	x16, [x16, #0x408]   ;r[x16_37=0x1010b5000] 
+   mem[r]_12 addr[ 0x1010b5408 ] size:8 value:0x1cda2a2f4
+	 w[x16_38=0x1cda2a2f4 ]
+Hexdump for x16 at address 0x1cda2a2f4:
+00000001cda2a2f4: 7f 23 03 d5 f4 4f be a9  fd 7b 01 a9 fd 43 00 91  |.#...O...{...C..|
+00000001cda2a304: f3 03 00 aa 68 d0 3b d5  00 b1 40 f9 1f 04 00 b1  |....h.;...@.....|
+0x178168     br	x16   ;r[x16_39=0x1cda2a2f4] 
+call addr: 1cda2a2f4 [libobjc.A.dylib!objc_retainAutoreleasedReturnValue]
+0x514b0      ldr	x1, [sp, #0x38]   ;r[sp_40=0x16f4a11b0] 
+   mem[r]_13 addr[ 0x16f4a11e8 ] size:8 value:0x0
+	 w[x1_41=0x0 ]
+0x514b4      str	x0, [sp, #0x18]   ;r[x0_42=0x10181de00] r[sp_43=0x16f4a11b0] 
+   mem[w]_14 addr[ 0x16f4a11c8 ] size:8 value:0x10181de00
+0x514b8      ldur	x2, [x29, #-0x18]   ;r[fp_44=0x16f4a1240] 
+   mem[r]_15 addr[ 0x16f4a1228 ] size:8 value:0x10133b9d0
+	 w[x2_45=0x10133b9d0 ]
+Hexdump for x2 at address 0x10133b9d0:
+000000010133b9d0: 45 5c 0e 01 01 00 00 01  00 00 00 00 00 00 00 00  |E\..............|
+000000010133b9e0: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+0x514bc      mov	w8, #1   ;
+	 w[w8_46=0x1 ]
+0x514c0      and	w3, w8, #1   ;r[w8_47=0x1] 
+	 w[w3_48=0x1 ]
+0x514c4      bl	#0x1010713e0(0x1813e0)   ;
+call addr: 1010713e0 [Automation.debug.dylib!objc_msgSend$pushViewController:animated:]
+0x1813e0     adrp	x1, #0x1010e1000   ;
+	 w[x1_49=0x1010e1000 ]
+Hexdump for x1 at address 0x1010e1000:
+00000001010e1000: f8 8f 41 d0 01 00 00 00  f8 da 28 d0 01 00 00 00  |..A.......(.....|
+00000001010e1010: f8 fe 98 d0 01 00 00 00  f8 f3 09 01 01 00 00 00  |................|
+0x1813e4     ldr	x1, [x1, #0x4f0]   ;r[x1_50=0x1010e1000] 
+   mem[r]_16 addr[ 0x1010e14f0 ] size:8 value:0x1cfd185af
+	 w[x1_51=0x1cfd185af ]
+String for x1 at address 0x1cfd185af : pushViewController:animated:
+0x1813e8     adrp	x16, #0x1010b5000   ;
+	 w[x16_52=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x1813ec     ldr	x16, [x16, #0x3b0]   ;r[x16_53=0x1010b5000] 
+   mem[r]_17 addr[ 0x1010b53b0 ] size:8 value:0x1cda25c00
+	 w[x16_54=0x1cda25c00 ]
+Hexdump for x16 at address 0x1cda25c00:
+00000001cda25c00: 1f 00 00 f1 6d 06 00 54  0e 00 40 f9 d0 cd 7d 92  |....m..T..@...}.|
+00000001cda25c10: ea 03 00 aa 2a 5c ed f2  50 19 c1 da ef 03 10 aa  |....*\..P.......|
+0x1813f0     br	x16   ;r[x16_55=0x1cda25c00] 
+call addr: 1cda25c00 [libobjc.A.dylib!objc_msgSend]
+0x514c8      ldr	x0, [sp, #0x18]   ;r[sp_56=0x16f4a11b0] 
+   mem[r]_18 addr[ 0x16f4a11c8 ] size:8 value:0x10181de00
+	 w[x0_57=0x10181de00 ]
+Hexdump for x0 at address 0x10181de00:
+000000010181de00: 1d 80 dd 2a 02 00 00 09  00 00 00 00 00 00 00 00  |...*............|
+000000010181de10: 00 00 00 00 00 00 00 00  d0 f8 33 01 01 00 00 00  |..........3.....|
+0x514cc      bl	#0x101068130(0x178130)   ;
+0x178130     adrp	x16, #0x1010b5000   ;
+	 w[x16_58=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x178134     ldr	x16, [x16, #0x3e8]   ;r[x16_59=0x1010b5000] 
+   mem[r]_19 addr[ 0x1010b53e8 ] size:8 value:0x1cda27544
+	 w[x16_60=0x1cda27544 ]
+Hexdump for x16 at address 0x1cda27544:
+00000001cda27544: 00 00 00 ea 6d ff ff 54  10 00 40 f9 02 82 7d 92  |....m..T..@...}.|
+00000001cda27554: 51 10 40 f9 11 03 10 36  d0 03 00 36 11 fe 77 d3  |Q.@....6...6..w.|
+0x178138     br	x16   ;r[x16_61=0x1cda27544] 
+call addr: 1cda27544 [libobjc.A.dylib!objc_release]
+0x514d0      ldr	x1, [sp, #0x38]   ;r[sp_62=0x16f4a11b0] 
+   mem[r]_20 addr[ 0x16f4a11e8 ] size:8 value:0x0
+	 w[x1_63=0x0 ]
+0x514d4      adrp	x8, #0x1010e4000   ;
+	 w[x8_64=0x1010e4000 ]
+Hexdump for x8 at address 0x1010e4000:
+00000001010e4000: fe 1b 0a 01 01 00 00 00  f0 8f 09 01 01 00 00 00  |................|
+00000001010e4010: d2 9d db cf 01 00 00 00  29 0a 31 d0 01 00 00 00  |........).1.....|
+0x514d8      ldr	x0, [x8, #0x688]   ;r[x8_65=0x1010e4000] 
+   mem[r]_21 addr[ 0x1010e4688 ] size:8 value:0x1010e6190
+	 w[x0_66=0x1010e6190 ]
+Hexdump for x0 at address 0x1010e6190:
+00000001010e6190: b8 61 0e 01 01 00 00 00  58 01 d6 2a 02 00 00 00  |.a......X..*....|
+00000001010e61a0: 40 ce 49 80 02 00 03 00  00 00 00 00 01 00 21 80  |@.I...........!.|
+0x514dc      bl	#0x1010762c0(0x1862c0)   ;
+call addr: 1010762c0 [Automation.debug.dylib!objc_msgSend$shareInstance]
+0x1862c0     adrp	x1, #0x1010e2000   ;
+	 w[x1_67=0x1010e2000 ]
+Hexdump for x1 at address 0x1010e2000:
+00000001010e2000: 2e e6 7c d2 01 00 00 00  98 2d cf cf 01 00 00 00  |..|......-......|
+00000001010e2010: c8 59 d7 d0 01 00 00 00  65 2a 0a 01 01 00 00 00  |.Y......e*......|
+0x1862c4     ldr	x1, [x1, #0x8a8]   ;r[x1_68=0x1010e2000] 
+   mem[r]_22 addr[ 0x1010e28a8 ] size:8 value:0x1d120c341
+	 w[x1_69=0x1d120c341 ]
+String for x1 at address 0x1d120c341 : shareInstance
+0x1862c8     adrp	x16, #0x1010b5000   ;
+	 w[x16_70=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x1862cc     ldr	x16, [x16, #0x3b0]   ;r[x16_71=0x1010b5000] 
+   mem[r]_23 addr[ 0x1010b53b0 ] size:8 value:0x1cda25c00
+	 w[x16_72=0x1cda25c00 ]
+Hexdump for x16 at address 0x1cda25c00:
+00000001cda25c00: 1f 00 00 f1 6d 06 00 54  0e 00 40 f9 d0 cd 7d 92  |....m..T..@...}.|
+00000001cda25c10: ea 03 00 aa 2a 5c ed f2  50 19 c1 da ef 03 10 aa  |....*\..P.......|
+0x1862d0     br	x16   ;r[x16_73=0x1cda25c00] 
+call addr: 1cda25c00 [libobjc.A.dylib!objc_msgSend]
+0x715dc      sub	sp, sp, #0x40   ;r[sp_74=0x16f4a11b0] 
+	 w[sp_75=0x16f4a1170 ]
+Hexdump for sp at address 0x16f4a1170:
+000000016f4a1170: 38 8d dd 2a 02 00 00 00  50 ca 38 81 02 00 00 00  |8..*....P.8.....|
+000000016f4a1180: 9e b5 09 01 01 00 00 00  40 cd d0 05 01 00 00 00  |........@.......|
+0x715e0      stp	x29, x30, [sp, #0x30]   ;r[fp_76=0x16f4a1240] r[lr_77=0x100f414e0] r[sp_78=0x16f4a1170] 
+   mem[w]_24 addr[ 0x16f4a11a0 ] size:8 value:0x16f4a1240, mem[w]_25 addr[ 0x16f4a11a8 ] size:8 value:0x100f414e0
+0x715e4      add	x29, sp, #0x30   ;r[sp_79=0x16f4a1170] 
+	 w[fp_80=0x16f4a11a0 ]
+Hexdump for fp at address 0x16f4a11a0:
+000000016f4a11a0: 40 12 4a 6f 01 00 00 00  e0 14 f4 00 01 00 00 00  |@.Jo............|
+000000016f4a11b0: f0 d7 c0 00 01 00 00 00  9e b5 09 01 01 00 00 00  |................|
+0x715e8      adrp	x8, #0x1010ef000   ;
+	 w[x8_81=0x1010ef000 ]
+Hexdump for x8 at address 0x1010ef000:
+00000001010ef000: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+00000001010ef010: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+0x715ec      str	x8, [sp, #8]   ;r[x8_82=0x1010ef000] r[sp_83=0x16f4a1170] 
+   mem[w]_26 addr[ 0x16f4a1178 ] size:8 value:0x1010ef000
+0x715f0      str	x0, [sp, #0x18]   ;r[x0_84=0x1010e6190] r[sp_85=0x16f4a1170] 
+   mem[w]_27 addr[ 0x16f4a1188 ] size:8 value:0x1010e6190
+0x715f4      str	x1, [sp, #0x10]   ;r[x1_86=0x1d120c341] r[sp_87=0x16f4a1170] 
+   mem[w]_28 addr[ 0x16f4a1180 ] size:8 value:0x1d120c341
+0x715f8      adrp	x9, #0x1010ef000   ;
+	 w[x9_88=0x1010ef000 ]
+Hexdump for x9 at address 0x1010ef000:
+00000001010ef000: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+00000001010ef010: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+0x715fc      ldr	x8, [x9, #0x3d0]   ;r[x9_89=0x1010ef000] 
+   mem[r]_29 addr[ 0x1010ef3d0 ] size:8 value:0xa
+	 w[x8_90=0xa ]
+0x71600      add	x8, x8, #1   ;r[x8_91=0xa] 
+	 w[x8_92=0xb ]
+0x71604      str	x8, [x9, #0x3d0]   ;r[x8_93=0xb] r[x9_94=0x1010ef000] 
+   mem[w]_30 addr[ 0x1010ef3d0 ] size:8 value:0xb
+0x71608      adrp	x8, #0x101122000   ;
+	 w[x8_95=0x101122000 ]
+Hexdump for x8 at address 0x101122000:
+0000000101122000: a3 18 d6 cf 01 48 78 da  0b 0e f2 08 09 09 70 ce  |.....Hx.......p.|
+0000000101122010: cf cb 4b 4d 2e f1 4d 2d  2e 4e 4c 4f 75 2e 4a 4d  |..KM..M-.NLOu.JM|
+0x7160c      add	x8, x8, #0xf88   ;r[x8_96=0x101122000] 
+	 w[x8_97=0x101122f88 ]
+Hexdump for x8 at address 0x101122f88:
+0000000101122f88: ff ff ff ff ff ff ff ff  60 f9 1b 81 02 00 00 00  |........`.......|
+0000000101122f98: 00 00 00 00 00 e0 79 40  00 00 00 00 00 00 8c 40  |......y@.......@|
+0x71610      stur	x8, [x29, #-8]   ;r[x8_98=0x101122f88] r[fp_99=0x16f4a11a0] 
+   mem[w]_31 addr[ 0x16f4a1198 ] size:8 value:0x101122f88
+0x71614      sub	x0, x29, #0x10   ;r[fp_100=0x16f4a11a0] 
+	 w[x0_101=0x16f4a1190 ]
+Hexdump for x0 at address 0x16f4a1190:
+000000016f4a1190: f0 d7 c0 00 01 00 00 00  88 2f 12 01 01 00 00 00  |........./......|
+000000016f4a11a0: 40 12 4a 6f 01 00 00 00  e0 14 f4 00 01 00 00 00  |@.Jo............|
+0x71618      stur	xzr, [x29, #-0x10]   ;r[xzr_102=0x0] r[fp_103=0x16f4a11a0] 
+   mem[w]_32 addr[ 0x16f4a1190 ] size:8 value:0x0
+0x7161c      adrp	x1, #0x1010b6000   ;
+	 w[x1_104=0x1010b6000 ]
+Hexdump for x1 at address 0x1010b6000:
+00000001010b6000: 00 2b f5 00 01 00 00 00  10 57 0b 01 01 00 00 00  |.+.......W......|
+00000001010b6010: 40 13 0c 01 01 00 00 00  60 13 0c 01 01 00 00 00  |@.......`.......|
+0x71620      add	x1, x1, #0x440   ;r[x1_105=0x1010b6000] 
+	 w[x1_106=0x1010b6440 ]
+Hexdump for x1 at address 0x1010b6440:
+00000001010b6440: 68 7a d6 2a 02 00 00 00  00 00 00 50 00 00 00 00  |hz.*.......P....|
+00000001010b6450: 98 16 f6 00 01 00 00 00  10 57 0b 01 01 00 00 00  |.........W......|
+0x71624      bl	#0x10106819c(0x17819c)   ;
+0x17819c     adrp	x16, #0x1010b5000   ;
+	 w[x16_107=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x1781a0     ldr	x16, [x16, #0x430]   ;r[x16_108=0x1010b5000] 
+   mem[r]_33 addr[ 0x1010b5430 ] size:8 value:0x1cda2d0b0
+	 w[x16_109=0x1cda2d0b0 ]
+Hexdump for x16 at address 0x1cda2d0b0:
+00000001cda2d0b0: 7f 23 03 d5 f6 57 bd a9  f4 4f 01 a9 fd 7b 02 a9  |.#...W...O...{..|
+00000001cda2d0c0: fd 83 00 91 14 00 40 f9  9f 02 01 eb e0 01 00 54  |......@........T|
+0x1781a4     br	x16   ;r[x16_110=0x1cda2d0b0] 
+call addr: 1cda2d0b0 [libobjc.A.dylib!objc_storeStrong]
+0x71628      ldr	x9, [sp, #8]   ;r[sp_111=0x16f4a1170] 
+   mem[r]_34 addr[ 0x16f4a1178 ] size:8 value:0x1010ef000
+	 w[x9_112=0x1010ef000 ]
+Hexdump for x9 at address 0x1010ef000:
+00000001010ef000: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+00000001010ef010: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+0x7162c      ldr	x8, [x9, #0x3d8]   ;r[x9_113=0x1010ef000] 
+   mem[r]_35 addr[ 0x1010ef3d8 ] size:8 value:0xa
+	 w[x8_114=0xa ]
+0x71630      add	x8, x8, #1   ;r[x8_115=0xa] 
+	 w[x8_116=0xb ]
+0x71634      str	x8, [x9, #0x3d8]   ;r[x8_117=0xb] r[x9_118=0x1010ef000] 
+   mem[w]_36 addr[ 0x1010ef3d8 ] size:8 value:0xb
+0x71638      ldur	x8, [x29, #-8]   ;r[fp_119=0x16f4a11a0] 
+   mem[r]_37 addr[ 0x16f4a1198 ] size:8 value:0x101122f88
+	 w[x8_120=0x101122f88 ]
+Hexdump for x8 at address 0x101122f88:
+0000000101122f88: ff ff ff ff ff ff ff ff  60 f9 1b 81 02 00 00 00  |........`.......|
+0000000101122f98: 00 00 00 00 00 e0 79 40  00 00 00 00 00 00 8c 40  |......y@.......@|
+0x7163c      ldr	x8, [x8]   ;r[x8_121=0x101122f88] 
+   mem[r]_38 addr[ 0x101122f88 ] size:8 value:0xffffffffffffffff
+	 w[x8_122=0xffffffffffffffff ]
+0x71640      adds	x8, x8, #1   ;r[x8_123=0xffffffffffffffff] 
+	 w[x8_124=0x0 ]
+0x71644      cset	w8, eq   ;
+	 w[w8_125=0x1 ]
+0x71648      tbnz	w8, #0, #0x100f61674   ;r[w8_126=0x1] 
+0x71674      b	#0x100f61678(0x71678)   ;
+0x71678      sub	x0, x29, #0x10   ;r[fp_127=0x16f4a11a0] 
+	 w[x0_128=0x16f4a1190 ]
+Hexdump for x0 at address 0x16f4a1190:
+000000016f4a1190: 40 64 0b 01 01 00 00 00  88 2f 12 01 01 00 00 00  |@d......./......|
+000000016f4a11a0: 40 12 4a 6f 01 00 00 00  e0 14 f4 00 01 00 00 00  |@.Jo............|
+0x7167c      mov	x1, #0   ;
+	 w[x1_129=0x0 ]
+0x71680      bl	#0x10106819c(0x17819c)   ;
+0x17819c     adrp	x16, #0x1010b5000   ;
+	 w[x16_130=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x1781a0     ldr	x16, [x16, #0x430]   ;r[x16_131=0x1010b5000] 
+   mem[r]_39 addr[ 0x1010b5430 ] size:8 value:0x1cda2d0b0
+	 w[x16_132=0x1cda2d0b0 ]
+Hexdump for x16 at address 0x1cda2d0b0:
+00000001cda2d0b0: 7f 23 03 d5 f6 57 bd a9  f4 4f 01 a9 fd 7b 02 a9  |.#...W...O...{..|
+00000001cda2d0c0: fd 83 00 91 14 00 40 f9  9f 02 01 eb e0 01 00 54  |......@........T|
+0x1781a4     br	x16   ;r[x16_133=0x1cda2d0b0] 
+call addr: 1cda2d0b0 [libobjc.A.dylib!objc_storeStrong]
+0x71684      adrp	x8, #0x101122000   ;
+	 w[x8_134=0x101122000 ]
+Hexdump for x8 at address 0x101122000:
+0000000101122000: a3 18 d6 cf 01 48 78 da  0b 0e f2 08 09 09 70 ce  |.....Hx.......p.|
+0000000101122010: cf cb 4b 4d 2e f1 4d 2d  2e 4e 4c 4f 75 2e 4a 4d  |..KM..M-.NLOu.JM|
+0x71688      ldr	x0, [x8, #0xf90]   ;r[x8_135=0x101122000] 
+   mem[r]_40 addr[ 0x101122f90 ] size:8 value:0x2811bf960
+	 w[x0_136=0x2811bf960 ]
+Hexdump for x0 at address 0x2811bf960:
+00000002811bf960: 91 61 0e 01 01 00 00 01  00 00 00 00 00 00 00 00  |.a..............|
+00000002811bf970: f0 55 fa 81 02 00 00 00  00 00 00 00 00 00 00 00  |.U..............|
+0x7168c      ldp	x29, x30, [sp, #0x30]   ;r[sp_137=0x16f4a1170] 
+   mem[r]_41 addr[ 0x16f4a11a0 ] size:8 value:0x16f4a1240, mem[r]_42 addr[ 0x16f4a11a8 ] size:8 value:0x100f414e0
+	 w[fp_138=0x16f4a1240 lr_139=0x100f414e0 ]
+Hexdump for fp at address 0x16f4a1240:
+000000016f4a1240: 70 12 4a 6f 01 00 00 00  0c c0 82 2b 01 00 00 00  |p.Jo.......+....|
+000000016f4a1250: 00 00 a9 82 02 00 00 00  9e b5 09 01 01 00 00 00  |................|
+Hexdump for lr at address 0x100f414e0:
+0000000100f414e0: fd 03 1d aa 1f 9b 04 94  e1 1f 40 f9 e0 1b 00 f9  |..........@.....|
+0000000100f414f0: 04 a8 04 94 fd 03 1d aa  1a 9b 04 94 e1 1f 40 f9  |..............@.|
+0x71690      add	sp, sp, #0x40   ;r[sp_140=0x16f4a1170] 
+	 w[sp_141=0x16f4a11b0 ]
+Hexdump for sp at address 0x16f4a11b0:
+000000016f4a11b0: f0 d7 c0 00 01 00 00 00  9e b5 09 01 01 00 00 00  |................|
+000000016f4a11c0: 30 c0 82 2b 01 00 00 00  00 de 81 01 01 00 00 00  |0..+............|
+0x71694      b	#0x101068154(0x178154)   ;
+0x178154     adrp	x16, #0x1010b5000   ;
+	 w[x16_142=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x178158     ldr	x16, [x16, #0x400]   ;r[x16_143=0x1010b5000] 
+   mem[r]_43 addr[ 0x1010b5400 ] size:8 value:0x1cda291d8
+	 w[x16_144=0x1cda291d8 ]
+Hexdump for x16 at address 0x1cda291d8:
+00000001cda291d8: 7f 23 03 d5 f6 57 bd a9  f4 4f 01 a9 fd 7b 02 a9  |.#...W...O...{..|
+00000001cda291e8: fd 83 00 91 f3 03 00 aa  75 d0 3b d5 a8 b2 40 f9  |........u.;...@.|
+0x17815c     br	x16   ;r[x16_145=0x1cda291d8] 
+call addr: 1cda291d8 [libobjc.A.dylib!objc_retainAutoreleaseReturnValue]
+0x514e0      mov	x29, x29   ;r[fp_146=0x16f4a1240] 
+	 w[fp_147=0x16f4a1240 ]
+Hexdump for fp at address 0x16f4a1240:
+000000016f4a1240: 70 12 4a 6f 01 00 00 00  0c c0 82 2b 01 00 00 00  |p.Jo.......+....|
+000000016f4a1250: 00 00 a9 82 02 00 00 00  9e b5 09 01 01 00 00 00  |................|
+0x514e4      bl	#0x101068160(0x178160)   ;
+0x178160     adrp	x16, #0x1010b5000   ;
+	 w[x16_148=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x178164     ldr	x16, [x16, #0x408]   ;r[x16_149=0x1010b5000] 
+   mem[r]_44 addr[ 0x1010b5408 ] size:8 value:0x1cda2a2f4
+	 w[x16_150=0x1cda2a2f4 ]
+Hexdump for x16 at address 0x1cda2a2f4:
+00000001cda2a2f4: 7f 23 03 d5 f4 4f be a9  fd 7b 01 a9 fd 43 00 91  |.#...O...{...C..|
+00000001cda2a304: f3 03 00 aa 68 d0 3b d5  00 b1 40 f9 1f 04 00 b1  |....h.;...@.....|
+0x178168     br	x16   ;r[x16_151=0x1cda2a2f4] 
+call addr: 1cda2a2f4 [libobjc.A.dylib!objc_retainAutoreleasedReturnValue]
+0x514e8      ldr	x1, [sp, #0x38]   ;r[sp_152=0x16f4a11b0] 
+   mem[r]_45 addr[ 0x16f4a11e8 ] size:8 value:0x0
+	 w[x1_153=0x0 ]
+0x514ec      str	x0, [sp, #0x30]   ;r[x0_154=0x2811bf960] r[sp_155=0x16f4a11b0] 
+   mem[w]_46 addr[ 0x16f4a11e0 ] size:8 value:0x2811bf960
+0x514f0      bl	#0x10106b500(0x17b500)   ;
+call addr: 10106b500 [Automation.debug.dylib!objc_msgSend$dateFormatter]
+0x17b500     adrp	x1, #0x1010df000   ;
+	 w[x1_156=0x1010df000 ]
+Hexdump for x1 at address 0x1010df000:
+00000001010df000: 8e 3d 09 01 01 00 00 00  84 01 00 00 08 00 00 00  |.=..............|
+00000001010df010: 50 00 00 00 00 00 00 00  8f 15 09 01 01 00 00 00  |P...............|
+0x17b504     ldr	x1, [x1, #0xd38]   ;r[x1_157=0x1010df000] 
+   mem[r]_47 addr[ 0x1010dfd38 ] size:8 value:0x1cfcdd4b2
+	 w[x1_158=0x1cfcdd4b2 ]
+String for x1 at address 0x1cfcdd4b2 : dateFormatter
+0x17b508     adrp	x16, #0x1010b5000   ;
+	 w[x16_159=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x17b50c     ldr	x16, [x16, #0x3b0]   ;r[x16_160=0x1010b5000] 
+   mem[r]_48 addr[ 0x1010b53b0 ] size:8 value:0x1cda25c00
+	 w[x16_161=0x1cda25c00 ]
+Hexdump for x16 at address 0x1cda25c00:
+00000001cda25c00: 1f 00 00 f1 6d 06 00 54  0e 00 40 f9 d0 cd 7d 92  |....m..T..@...}.|
+00000001cda25c10: ea 03 00 aa 2a 5c ed f2  50 19 c1 da ef 03 10 aa  |....*\..P.......|
+0x17b510     br	x16   ;r[x16_162=0x1cda25c00] 
+call addr: 1cda25c00 [libobjc.A.dylib!objc_msgSend]
+0x71830      sub	sp, sp, #0x10   ;r[sp_163=0x16f4a11b0] 
+	 w[sp_164=0x16f4a11a0 ]
+Hexdump for sp at address 0x16f4a11a0:
+000000016f4a11a0: 40 12 4a 6f 01 00 00 00  e8 14 f4 00 81 5e 3f 58  |@.Jo.........^?X|
+000000016f4a11b0: f0 d7 c0 00 01 00 00 00  9e b5 09 01 01 00 00 00  |................|
+0x71834      str	x0, [sp, #8]   ;r[x0_165=0x2811bf960] r[sp_166=0x16f4a11a0] 
+   mem[w]_49 addr[ 0x16f4a11a8 ] size:8 value:0x2811bf960
+0x71838      str	x1, [sp]   ;r[x1_167=0x1cfcdd4b2] r[sp_168=0x16f4a11a0] 
+   mem[w]_50 addr[ 0x16f4a11a0 ] size:8 value:0x1cfcdd4b2
+0x7183c      ldr	x8, [sp, #8]   ;r[sp_169=0x16f4a11a0] 
+   mem[r]_51 addr[ 0x16f4a11a8 ] size:8 value:0x2811bf960
+	 w[x8_170=0x2811bf960 ]
+Hexdump for x8 at address 0x2811bf960:
+00000002811bf960: 91 61 0e 01 01 00 00 02  00 00 00 00 00 00 00 00  |.a..............|
+00000002811bf970: f0 55 fa 81 02 00 00 00  00 00 00 00 00 00 00 00  |.U..............|
+0x71840      ldr	x0, [x8, #0x10]   ;r[x8_171=0x2811bf960] 
+   mem[r]_52 addr[ 0x2811bf970 ] size:8 value:0x281fa55f0
+	 w[x0_172=0x281fa55f0 ]
+Hexdump for x0 at address 0x281fa55f0:
+0000000281fa55f0: 71 bb d7 2a 02 00 00 01  e0 f9 1b 81 02 00 00 00  |q..*............|
+0000000281fa5600: d0 1a 33 01 01 00 00 00  00 00 00 00 00 00 00 00  |..3.............|
+0x71844      add	sp, sp, #0x10   ;r[sp_173=0x16f4a11a0] 
+	 w[sp_174=0x16f4a11b0 ]
+Hexdump for sp at address 0x16f4a11b0:
+000000016f4a11b0: f0 d7 c0 00 01 00 00 00  9e b5 09 01 01 00 00 00  |................|
+000000016f4a11c0: 30 c0 82 2b 01 00 00 00  00 de 81 01 01 00 00 00  |0..+............|
+0x71848      ret	   ;
+0x514f4      mov	x29, x29   ;r[fp_175=0x16f4a1240] 
+	 w[fp_176=0x16f4a1240 ]
+Hexdump for fp at address 0x16f4a1240:
+000000016f4a1240: 70 12 4a 6f 01 00 00 00  0c c0 82 2b 01 00 00 00  |p.Jo.......+....|
+000000016f4a1250: 00 00 a9 82 02 00 00 00  9e b5 09 01 01 00 00 00  |................|
+0x514f8      bl	#0x101068160(0x178160)   ;
+0x178160     adrp	x16, #0x1010b5000   ;
+	 w[x16_177=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x178164     ldr	x16, [x16, #0x408]   ;r[x16_178=0x1010b5000] 
+   mem[r]_53 addr[ 0x1010b5408 ] size:8 value:0x1cda2a2f4
+	 w[x16_179=0x1cda2a2f4 ]
+Hexdump for x16 at address 0x1cda2a2f4:
+00000001cda2a2f4: 7f 23 03 d5 f4 4f be a9  fd 7b 01 a9 fd 43 00 91  |.#...O...{...C..|
+00000001cda2a304: f3 03 00 aa 68 d0 3b d5  00 b1 40 f9 1f 04 00 b1  |....h.;...@.....|
+0x178168     br	x16   ;r[x16_180=0x1cda2a2f4] 
+call addr: 1cda2a2f4 [libobjc.A.dylib!objc_retainAutoreleasedReturnValue]
+0x514fc      ldr	x1, [sp, #0x38]   ;r[sp_181=0x16f4a11b0] 
+   mem[r]_54 addr[ 0x16f4a11e8 ] size:8 value:0x0
+	 w[x1_182=0x0 ]
+0x51500      str	x0, [sp, #0x28]   ;r[x0_183=0x281fa55f0] r[sp_184=0x16f4a11b0] 
+   mem[w]_55 addr[ 0x16f4a11d8 ] size:8 value:0x281fa55f0
+0x51504      adrp	x8, #0x1010e4000   ;
+	 w[x8_185=0x1010e4000 ]
+Hexdump for x8 at address 0x1010e4000:
+00000001010e4000: fe 1b 0a 01 01 00 00 00  f0 8f 09 01 01 00 00 00  |................|
+00000001010e4010: d2 9d db cf 01 00 00 00  29 0a 31 d0 01 00 00 00  |........).1.....|
+0x51508      ldr	x0, [x8, #0x690]   ;r[x8_186=0x1010e4000] 
+   mem[r]_56 addr[ 0x1010e4690 ] size:8 value:0x22ad74360
+	 w[x0_187=0x22ad74360 ]
+Hexdump for x0 at address 0x22ad74360:
+000000022ad74360: e0 45 d7 2a 02 00 00 00  58 01 d6 2a 02 00 00 00  |.E.*....X..*....|
+000000022ad74370: 00 03 d9 82 02 00 0f 00  00 00 00 00 03 00 10 80  |................|
+0x5150c      bl	#0x10106b4e0(0x17b4e0)   ;
+call addr: 10106b4e0 [Automation.debug.dylib!objc_msgSend$date]
+0x17b4e0     adrp	x1, #0x1010df000   ;
+	 w[x1_188=0x1010df000 ]
+Hexdump for x1 at address 0x1010df000:
+00000001010df000: 8e 3d 09 01 01 00 00 00  84 01 00 00 08 00 00 00  |.=..............|
+00000001010df010: 50 00 00 00 00 00 00 00  8f 15 09 01 01 00 00 00  |P...............|
+0x17b4e4     ldr	x1, [x1, #0xd30]   ;r[x1_189=0x1010df000] 
+   mem[r]_57 addr[ 0x1010dfd30 ] size:8 value:0x1d034e7f8
+	 w[x1_190=0x1d034e7f8 ]
+String for x1 at address 0x1d034e7f8 : date
+0x17b4e8     adrp	x16, #0x1010b5000   ;
+	 w[x16_191=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x17b4ec     ldr	x16, [x16, #0x3b0]   ;r[x16_192=0x1010b5000] 
+   mem[r]_58 addr[ 0x1010b53b0 ] size:8 value:0x1cda25c00
+	 w[x16_193=0x1cda25c00 ]
+Hexdump for x16 at address 0x1cda25c00:
+00000001cda25c00: 1f 00 00 f1 6d 06 00 54  0e 00 40 f9 d0 cd 7d 92  |....m..T..@...}.|
+00000001cda25c10: ea 03 00 aa 2a 5c ed f2  50 19 c1 da ef 03 10 aa  |....*\..P.......|
+0x17b4f0     br	x16   ;r[x16_194=0x1cda25c00] 
+call addr: 1cda25c00 [libobjc.A.dylib!objc_msgSend]
+0x51510      mov	x29, x29   ;r[fp_195=0x16f4a1240] 
+	 w[fp_196=0x16f4a1240 ]
+Hexdump for fp at address 0x16f4a1240:
+000000016f4a1240: 70 12 4a 6f 01 00 00 00  0c c0 82 2b 01 00 00 00  |p.Jo.......+....|
+000000016f4a1250: 00 00 a9 82 02 00 00 00  9e b5 09 01 01 00 00 00  |................|
+0x51514      bl	#0x101068160(0x178160)   ;
+0x178160     adrp	x16, #0x1010b5000   ;
+	 w[x16_197=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x178164     ldr	x16, [x16, #0x408]   ;r[x16_198=0x1010b5000] 
+   mem[r]_59 addr[ 0x1010b5408 ] size:8 value:0x1cda2a2f4
+	 w[x16_199=0x1cda2a2f4 ]
+Hexdump for x16 at address 0x1cda2a2f4:
+00000001cda2a2f4: 7f 23 03 d5 f4 4f be a9  fd 7b 01 a9 fd 43 00 91  |.#...O...{...C..|
+00000001cda2a304: f3 03 00 aa 68 d0 3b d5  00 b1 40 f9 1f 04 00 b1  |....h.;...@.....|
+0x178168     br	x16   ;r[x16_200=0x1cda2a2f4] 
+call addr: 1cda2a2f4 [libobjc.A.dylib!objc_retainAutoreleasedReturnValue]
+0x51518      ldr	x1, [sp, #0x38]   ;r[sp_201=0x16f4a11b0] 
+   mem[r]_60 addr[ 0x16f4a11e8 ] size:8 value:0x0
+	 w[x1_202=0x0 ]
+0x5151c      mov	x2, x0   ;r[x0_203=0x9db8ab04c344d993] 
+	 w[x2_204=0x9db8ab04c344d993 ]
+0x51520      ldr	x0, [sp, #0x28]   ;r[sp_205=0x16f4a11b0] 
+   mem[r]_61 addr[ 0x16f4a11d8 ] size:8 value:0x281fa55f0
+	 w[x0_206=0x281fa55f0 ]
+Hexdump for x0 at address 0x281fa55f0:
+0000000281fa55f0: 71 bb d7 2a 02 00 00 02  e0 f9 1b 81 02 00 00 00  |q..*............|
+0000000281fa5600: d0 1a 33 01 01 00 00 00  00 00 00 00 00 00 00 00  |..3.............|
+0x51524      str	x2, [sp, #0x20]   ;r[x2_207=0x9db8ab04c344d993] r[sp_208=0x16f4a11b0] 
+   mem[w]_62 addr[ 0x16f4a11d0 ] size:8 value:0x9db8ab04c344d993
+0x51528      bl	#0x101076c00(0x186c00)   ;
+call addr: 101076c00 [Automation.debug.dylib!objc_msgSend$stringFromDate:]
+0x186c00     adrp	x1, #0x1010e2000   ;
+	 w[x1_209=0x1010e2000 ]
+Hexdump for x1 at address 0x1010e2000:
+00000001010e2000: 2e e6 7c d2 01 00 00 00  98 2d cf cf 01 00 00 00  |..|......-......|
+00000001010e2010: c8 59 d7 d0 01 00 00 00  65 2a 0a 01 01 00 00 00  |.Y......e*......|
+0x186c04     ldr	x1, [x1, #0xaf8]   ;r[x1_210=0x1010e2000] 
+   mem[r]_63 addr[ 0x1010e2af8 ] size:8 value:0x1d0bb0278
+	 w[x1_211=0x1d0bb0278 ]
+String for x1 at address 0x1d0bb0278 : stringFromDate:
+0x186c08     adrp	x16, #0x1010b5000   ;
+	 w[x16_212=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x186c0c     ldr	x16, [x16, #0x3b0]   ;r[x16_213=0x1010b5000] 
+   mem[r]_64 addr[ 0x1010b53b0 ] size:8 value:0x1cda25c00
+	 w[x16_214=0x1cda25c00 ]
+Hexdump for x16 at address 0x1cda25c00:
+00000001cda25c00: 1f 00 00 f1 6d 06 00 54  0e 00 40 f9 d0 cd 7d 92  |....m..T..@...}.|
+00000001cda25c10: ea 03 00 aa 2a 5c ed f2  50 19 c1 da ef 03 10 aa  |....*\..P.......|
+0x186c10     br	x16   ;r[x16_215=0x1cda25c00] 
+call addr: 1cda25c00 [libobjc.A.dylib!objc_msgSend]
+0x5152c      mov	x29, x29   ;r[fp_216=0x16f4a1240] 
+	 w[fp_217=0x16f4a1240 ]
+Hexdump for fp at address 0x16f4a1240:
+000000016f4a1240: 70 12 4a 6f 01 00 00 00  0c c0 82 2b 01 00 00 00  |p.Jo.......+....|
+000000016f4a1250: 00 00 a9 82 02 00 00 00  9e b5 09 01 01 00 00 00  |................|
+0x51530      bl	#0x101068160(0x178160)   ;
+0x178160     adrp	x16, #0x1010b5000   ;
+	 w[x16_218=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x178164     ldr	x16, [x16, #0x408]   ;r[x16_219=0x1010b5000] 
+   mem[r]_65 addr[ 0x1010b5408 ] size:8 value:0x1cda2a2f4
+	 w[x16_220=0x1cda2a2f4 ]
+Hexdump for x16 at address 0x1cda2a2f4:
+00000001cda2a2f4: 7f 23 03 d5 f4 4f be a9  fd 7b 01 a9 fd 43 00 91  |.#...O...{...C..|
+00000001cda2a304: f3 03 00 aa 68 d0 3b d5  00 b1 40 f9 1f 04 00 b1  |....h.;...@.....|
+0x178168     br	x16   ;r[x16_221=0x1cda2a2f4] 
+call addr: 1cda2a2f4 [libobjc.A.dylib!objc_retainAutoreleasedReturnValue]
+0x51534      mov	x8, x0   ;r[x0_222=0x2811ca580] 
+	 w[x8_223=0x2811ca580 ]
+Hexdump for x8 at address 0x2811ca580:
+00000002811ca580: 89 48 d7 2a 02 00 00 01  8c 07 00 00 02 00 00 00  |.H.*............|
+00000002811ca590: 0e 30 33 2d 30 36 20 31  30 3a 30 33 3a 32 35 00  |.03-06 10:03:25.|
+0x51538      ldr	x0, [sp, #0x20]   ;r[sp_224=0x16f4a11b0] 
+   mem[r]_66 addr[ 0x16f4a11d0 ] size:8 value:0x9db8ab04c344d993
+	 w[x0_225=0x9db8ab04c344d993 ]
+0x5153c      sub	x9, x29, #0x20   ;r[fp_226=0x16f4a1240] 
+	 w[x9_227=0x16f4a1220 ]
+Hexdump for x9 at address 0x16f4a1220:
+000000016f4a1220: 00 00 00 00 00 00 00 00  d0 b9 33 01 01 00 00 00  |..........3.....|
+000000016f4a1230: 9e b5 09 01 01 00 00 00  f0 d7 c0 00 01 00 00 00  |................|
+0x51540      stur	x9, [x29, #-0x38]   ;r[x9_228=0x16f4a1220] r[fp_229=0x16f4a1240] 
+   mem[w]_67 addr[ 0x16f4a1208 ] size:8 value:0x16f4a1220
+0x51544      stur	x8, [x29, #-0x20]   ;r[x8_230=0x2811ca580] r[fp_231=0x16f4a1240] 
+   mem[w]_68 addr[ 0x16f4a1220 ] size:8 value:0x2811ca580
+0x51548      bl	#0x101068130(0x178130)   ;
+0x178130     adrp	x16, #0x1010b5000   ;
+	 w[x16_232=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x178134     ldr	x16, [x16, #0x3e8]   ;r[x16_233=0x1010b5000] 
+   mem[r]_69 addr[ 0x1010b53e8 ] size:8 value:0x1cda27544
+	 w[x16_234=0x1cda27544 ]
+Hexdump for x16 at address 0x1cda27544:
+00000001cda27544: 00 00 00 ea 6d ff ff 54  10 00 40 f9 02 82 7d 92  |....m..T..@...}.|
+00000001cda27554: 51 10 40 f9 11 03 10 36  d0 03 00 36 11 fe 77 d3  |Q.@....6...6..w.|
+0x178138     br	x16   ;r[x16_235=0x1cda27544] 
+call addr: 1cda27544 [libobjc.A.dylib!objc_release]
+0x5154c      ldr	x0, [sp, #0x28]   ;r[sp_236=0x16f4a11b0] 
+   mem[r]_70 addr[ 0x16f4a11d8 ] size:8 value:0x281fa55f0
+	 w[x0_237=0x281fa55f0 ]
+Hexdump for x0 at address 0x281fa55f0:
+0000000281fa55f0: 71 bb d7 2a 02 00 00 02  e0 f9 1b 81 02 00 00 00  |q..*............|
+0000000281fa5600: d0 1a 33 01 01 00 00 00  00 00 00 00 00 00 00 00  |..3.............|
+0x51550      bl	#0x101068130(0x178130)   ;
+0x178130     adrp	x16, #0x1010b5000   ;
+	 w[x16_238=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x178134     ldr	x16, [x16, #0x3e8]   ;r[x16_239=0x1010b5000] 
+   mem[r]_71 addr[ 0x1010b53e8 ] size:8 value:0x1cda27544
+	 w[x16_240=0x1cda27544 ]
+Hexdump for x16 at address 0x1cda27544:
+00000001cda27544: 00 00 00 ea 6d ff ff 54  10 00 40 f9 02 82 7d 92  |....m..T..@...}.|
+00000001cda27554: 51 10 40 f9 11 03 10 36  d0 03 00 36 11 fe 77 d3  |Q.@....6...6..w.|
+0x178138     br	x16   ;r[x16_241=0x1cda27544] 
+call addr: 1cda27544 [libobjc.A.dylib!objc_release]
+0x51554      ldr	x0, [sp, #0x30]   ;r[sp_242=0x16f4a11b0] 
+   mem[r]_72 addr[ 0x16f4a11e0 ] size:8 value:0x2811bf960
+	 w[x0_243=0x2811bf960 ]
+Hexdump for x0 at address 0x2811bf960:
+00000002811bf960: 91 61 0e 01 01 00 00 02  00 00 00 00 00 00 00 00  |.a..............|
+00000002811bf970: f0 55 fa 81 02 00 00 00  00 00 00 00 00 00 00 00  |.U..............|
+0x51558      bl	#0x101068130(0x178130)   ;
+0x178130     adrp	x16, #0x1010b5000   ;
+	 w[x16_244=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x178134     ldr	x16, [x16, #0x3e8]   ;r[x16_245=0x1010b5000] 
+   mem[r]_73 addr[ 0x1010b53e8 ] size:8 value:0x1cda27544
+	 w[x16_246=0x1cda27544 ]
+Hexdump for x16 at address 0x1cda27544:
+00000001cda27544: 00 00 00 ea 6d ff ff 54  10 00 40 f9 02 82 7d 92  |....m..T..@...}.|
+00000001cda27554: 51 10 40 f9 11 03 10 36  d0 03 00 36 11 fe 77 d3  |Q.@....6...6..w.|
+0x178138     br	x16   ;r[x16_247=0x1cda27544] 
+call addr: 1cda27544 [libobjc.A.dylib!objc_release]
+0x5155c      adrp	x8, #0x1010b4000   ;
+	 w[x8_248=0x1010b4000 ]
+Hexdump for x8 at address 0x1010b4000:
+00000001010b4000: 08 72 e0 ce 01 00 00 00  10 85 e0 ce 01 00 00 00  |.r..............|
+00000001010b4010: dc 86 e0 ce 01 00 00 00  24 a5 e0 ce 01 00 00 00  |........$.......|
+0x51560      ldr	x8, [x8, #0xec0]   ;r[x8_249=0x1010b4000] 
+   mem[r]_74 addr[ 0x1010b4ec0 ] size:8 value:0x2281d0798
+	 w[x8_250=0x2281d0798 ]
+Hexdump for x8 at address 0x2281d0798:
+00000002281d0798: b8 27 d6 2a 02 00 00 00  ba bc b1 30 00 00 00 00  |.'.*.......0....|
+00000002281d07a8: 00 00 00 00 00 00 00 00  00 00 00 00 ff ff ff ff  |................|
+0x51564      ldr	x8, [x8]   ;r[x8_251=0x2281d0798] 
+   mem[r]_75 addr[ 0x2281d0798 ] size:8 value:0x22ad627b8
+	 w[x8_252=0x22ad627b8 ]
+Hexdump for x8 at address 0x22ad627b8:
+000000022ad627b8: 2f 28 d6 2a 02 00 00 00  00 00 00 00 00 00 00 00  |/(.*............|
+000000022ad627c8: 0a 00 02 00 00 00 00 00  2f 28 d6 2a 02 00 00 00  |......../(.*....|
+0x51568      str	x8, [sp, #0x48]   ;r[x8_253=0x22ad627b8] r[sp_254=0x16f4a11b0] 
+   mem[w]_76 addr[ 0x16f4a11f8 ] size:8 value:0x22ad627b8
+0x5156c      ldur	x0, [x29, #-0x20]   ;r[fp_255=0x16f4a1240] 
+   mem[r]_77 addr[ 0x16f4a1220 ] size:8 value:0x2811ca580
+	 w[x0_256=0x2811ca580 ]
+Hexdump for x0 at address 0x2811ca580:
+00000002811ca580: 89 48 d7 2a 02 00 00 01  8c 07 00 00 02 00 00 00  |.H.*............|
+00000002811ca590: 0e 30 33 2d 30 36 20 31  30 3a 30 33 3a 32 35 00  |.03-06 10:03:25.|
+0x51570      bl	#0x101068148(0x178148)   ;
+0x178148     adrp	x16, #0x1010b5000   ;
+	 w[x16_257=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x17814c     ldr	x16, [x16, #0x3f8]   ;r[x16_258=0x1010b5000] 
+   mem[r]_78 addr[ 0x1010b53f8 ] size:8 value:0x1cda30e58
+	 w[x16_259=0x1cda30e58 ]
+Hexdump for x16 at address 0x1cda30e58:
+00000001cda30e58: 7f 23 03 d5 fd 7b bf a9  fd 03 00 91 fa d7 ff 97  |.#...{..........|
+00000001cda30e68: fd 7b c1 a8 ff 23 03 d5  d0 07 1e ca 50 00 f0 b6  |.{...#......P...|
+0x178150     br	x16   ;r[x16_260=0x1cda30e58] 
+call addr: 1cda30e58 [libobjc.A.dylib!objc_retainAutorelease]
+0x51574      ldr	x1, [sp, #0x38]   ;r[sp_261=0x16f4a11b0] 
+   mem[r]_79 addr[ 0x16f4a11e8 ] size:8 value:0x0
+	 w[x1_262=0x0 ]
+0x51578      bl	#0x1010688a0(0x1788a0)   ;
+call addr: 1010688a0 [Automation.debug.dylib!objc_msgSend$UTF8String]
+0x1788a0     adrp	x1, #0x1010df000   ;
+	 w[x1_263=0x1010df000 ]
+Hexdump for x1 at address 0x1010df000:
+00000001010df000: 8e 3d 09 01 01 00 00 00  84 01 00 00 08 00 00 00  |.=..............|
+00000001010df010: 50 00 00 00 00 00 00 00  8f 15 09 01 01 00 00 00  |P...............|
+0x1788a4     ldr	x1, [x1, #0x220]   ;r[x1_264=0x1010df000] 
+   mem[r]_80 addr[ 0x1010df220 ] size:8 value:0x1d01b93f8
+	 w[x1_265=0x1d01b93f8 ]
+String for x1 at address 0x1d01b93f8 : UTF8String
+0x1788a8     adrp	x16, #0x1010b5000   ;
+	 w[x16_266=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x1788ac     ldr	x16, [x16, #0x3b0]   ;r[x16_267=0x1010b5000] 
+   mem[r]_81 addr[ 0x1010b53b0 ] size:8 value:0x1cda25c00
+	 w[x16_268=0x1cda25c00 ]
+Hexdump for x16 at address 0x1cda25c00:
+00000001cda25c00: 1f 00 00 f1 6d 06 00 54  0e 00 40 f9 d0 cd 7d 92  |....m..T..@...}.|
+00000001cda25c10: ea 03 00 aa 2a 5c ed f2  50 19 c1 da ef 03 10 aa  |....*\..P.......|
+0x1788b0     br	x16   ;r[x16_269=0x1cda25c00] 
+call addr: 1cda25c00 [libobjc.A.dylib!objc_msgSend]
+0x5157c      ldr	x1, [sp, #0x38]   ;r[sp_270=0x16f4a11b0] 
+   mem[r]_82 addr[ 0x16f4a11e8 ] size:8 value:0x0
+	 w[x1_271=0x0 ]
+0x51580      str	x0, [sp, #0x40]   ;r[x0_272=0x2811ca591] r[sp_273=0x16f4a11b0] 
+   mem[w]_83 addr[ 0x16f4a11f0 ] size:8 value:0x2811ca591
+0x51584      adrp	x8, #0x1010e4000   ;
+	 w[x8_274=0x1010e4000 ]
+Hexdump for x8 at address 0x1010e4000:
+00000001010e4000: fe 1b 0a 01 01 00 00 00  f0 8f 09 01 01 00 00 00  |................|
+00000001010e4010: d2 9d db cf 01 00 00 00  29 0a 31 d0 01 00 00 00  |........).1.....|
+0x51588      ldr	x0, [x8, #0x698]   ;r[x8_275=0x1010e4000] 
+   mem[r]_84 addr[ 0x1010e4698 ] size:8 value:0x22ad7bf80
+	 w[x0_276=0x22ad7bf80 ]
+Hexdump for x0 at address 0x22ad7bf80:
+000000022ad7bf80: 58 bf d7 2a 02 00 00 00  58 01 d6 2a 02 00 00 00  |X..*....X..*....|
+000000022ad7bf90: 00 9c 80 06 01 00 3f 00  00 00 00 00 23 00 10 80  |......?.....#...|
+0x5158c      adrp	x2, #0x1010bf000   ;
+	 w[x2_277=0x1010bf000 ]
+Hexdump for x2 at address 0x1010bf000:
+00000001010bf000: 48 33 d7 2a 02 00 00 00  d0 07 00 00 00 00 00 00  |H3.*............|
+00000001010bf010: 22 f6 08 01 01 00 00 00  07 00 00 00 00 00 00 00  |"...............|
+0x51590      add	x2, x2, #0xda0   ;r[x2_278=0x1010bf000] 
+	 w[x2_279=0x1010bfda0 ]
+Hexdump for x2 at address 0x1010bfda0:
+00000001010bfda0: 48 33 d7 2a 02 00 00 00  d0 07 00 00 00 00 00 00  |H3.*............|
+00000001010bfdb0: 38 fd 08 01 01 00 00 00  0d 00 00 00 00 00 00 00  |8...............|
+0x51594      bl	#0x101076c80(0x186c80)   ;
+call addr: 101076c80 [Automation.debug.dylib!objc_msgSend$stringWithFormat:]
+0x186c80     adrp	x1, #0x1010e2000   ;
+	 w[x1_280=0x1010e2000 ]
+Hexdump for x1 at address 0x1010e2000:
+00000001010e2000: 2e e6 7c d2 01 00 00 00  98 2d cf cf 01 00 00 00  |..|......-......|
+00000001010e2010: c8 59 d7 d0 01 00 00 00  65 2a 0a 01 01 00 00 00  |.Y......e*......|
+0x186c84     ldr	x1, [x1, #0xb18]   ;r[x1_281=0x1010e2000] 
+   mem[r]_85 addr[ 0x1010e2b18 ] size:8 value:0x1d0cd93eb
+	 w[x1_282=0x1d0cd93eb ]
+String for x1 at address 0x1d0cd93eb : stringWithFormat:
+0x186c88     adrp	x16, #0x1010b5000   ;
+	 w[x16_283=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x186c8c     ldr	x16, [x16, #0x3b0]   ;r[x16_284=0x1010b5000] 
+   mem[r]_86 addr[ 0x1010b53b0 ] size:8 value:0x1cda25c00
+	 w[x16_285=0x1cda25c00 ]
+Hexdump for x16 at address 0x1cda25c00:
+00000001cda25c00: 1f 00 00 f1 6d 06 00 54  0e 00 40 f9 d0 cd 7d 92  |....m..T..@...}.|
+00000001cda25c10: ea 03 00 aa 2a 5c ed f2  50 19 c1 da ef 03 10 aa  |....*\..P.......|
+0x186c90     br	x16   ;r[x16_286=0x1cda25c00] 
+call addr: 1cda25c00 [libobjc.A.dylib!objc_msgSend]
+0x51598      mov	x29, x29   ;r[fp_287=0x16f4a1240] 
+	 w[fp_288=0x16f4a1240 ]
+Hexdump for fp at address 0x16f4a1240:
+000000016f4a1240: 70 12 4a 6f 01 00 00 00  0c c0 82 2b 01 00 00 00  |p.Jo.......+....|
+000000016f4a1250: 00 00 a9 82 02 00 00 00  9e b5 09 01 01 00 00 00  |................|
+0x5159c      bl	#0x101068160(0x178160)   ;
+0x178160     adrp	x16, #0x1010b5000   ;
+	 w[x16_289=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x178164     ldr	x16, [x16, #0x408]   ;r[x16_290=0x1010b5000] 
+   mem[r]_87 addr[ 0x1010b5408 ] size:8 value:0x1cda2a2f4
+	 w[x16_291=0x1cda2a2f4 ]
+Hexdump for x16 at address 0x1cda2a2f4:
+00000001cda2a2f4: 7f 23 03 d5 f4 4f be a9  fd 7b 01 a9 fd 43 00 91  |.#...O...{...C..|
+00000001cda2a304: f3 03 00 aa 68 d0 3b d5  00 b1 40 f9 1f 04 00 b1  |....h.;...@.....|
+0x178168     br	x16   ;r[x16_292=0x1cda2a2f4] 
+call addr: 1cda2a2f4 [libobjc.A.dylib!objc_retainAutoreleasedReturnValue]
+0x515a0      stur	x0, [x29, #-0x40]   ;r[x0_293=0x2804d9580] r[fp_294=0x16f4a1240] 
+   mem[w]_88 addr[ 0x16f4a1200 ] size:8 value:0x2804d9580
+0x515a4      bl	#0x101068148(0x178148)   ;
+0x178148     adrp	x16, #0x1010b5000   ;
+	 w[x16_295=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x17814c     ldr	x16, [x16, #0x3f8]   ;r[x16_296=0x1010b5000] 
+   mem[r]_89 addr[ 0x1010b53f8 ] size:8 value:0x1cda30e58
+	 w[x16_297=0x1cda30e58 ]
+Hexdump for x16 at address 0x1cda30e58:
+00000001cda30e58: 7f 23 03 d5 fd 7b bf a9  fd 03 00 91 fa d7 ff 97  |.#...{..........|
+00000001cda30e68: fd 7b c1 a8 ff 23 03 d5  d0 07 1e ca 50 00 f0 b6  |.{...#......P...|
+0x178150     br	x16   ;r[x16_298=0x1cda30e58] 
+call addr: 1cda30e58 [libobjc.A.dylib!objc_retainAutorelease]
+0x515a8      ldr	x1, [sp, #0x38]   ;r[sp_299=0x16f4a11b0] 
+   mem[r]_90 addr[ 0x16f4a11e8 ] size:8 value:0x0
+	 w[x1_300=0x0 ]
+0x515ac      bl	#0x1010688a0(0x1788a0)   ;
+call addr: 1010688a0 [Automation.debug.dylib!objc_msgSend$UTF8String]
+0x1788a0     adrp	x1, #0x1010df000   ;
+	 w[x1_301=0x1010df000 ]
+Hexdump for x1 at address 0x1010df000:
+00000001010df000: 8e 3d 09 01 01 00 00 00  84 01 00 00 08 00 00 00  |.=..............|
+00000001010df010: 50 00 00 00 00 00 00 00  8f 15 09 01 01 00 00 00  |P...............|
+0x1788a4     ldr	x1, [x1, #0x220]   ;r[x1_302=0x1010df000] 
+   mem[r]_91 addr[ 0x1010df220 ] size:8 value:0x1d01b93f8
+	 w[x1_303=0x1d01b93f8 ]
+String for x1 at address 0x1d01b93f8 : UTF8String
+0x1788a8     adrp	x16, #0x1010b5000   ;
+	 w[x16_304=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x1788ac     ldr	x16, [x16, #0x3b0]   ;r[x16_305=0x1010b5000] 
+   mem[r]_92 addr[ 0x1010b53b0 ] size:8 value:0x1cda25c00
+	 w[x16_306=0x1cda25c00 ]
+Hexdump for x16 at address 0x1cda25c00:
+00000001cda25c00: 1f 00 00 f1 6d 06 00 54  0e 00 40 f9 d0 cd 7d 92  |....m..T..@...}.|
+00000001cda25c10: ea 03 00 aa 2a 5c ed f2  50 19 c1 da ef 03 10 aa  |....*\..P.......|
+0x1788b0     br	x16   ;r[x16_307=0x1cda25c00] 
+call addr: 1cda25c00 [libobjc.A.dylib!objc_msgSend]
+0x515b0      ldr	x10, [sp, #0x40]   ;r[sp_308=0x16f4a11b0] 
+   mem[r]_93 addr[ 0x16f4a11f0 ] size:8 value:0x2811ca591
+	 w[x10_309=0x2811ca591 ]
+String for x10 at address 0x2811ca591 : 03-06 10:03:25
+0x515b4      mov	x8, x0   ;r[x0_310=0x2835a3810] 
+	 w[x8_311=0x2835a3810 ]
+Hexdump for x8 at address 0x2835a3810:
+00000002835a3810: e7 82 b9 e5 87 bb e4 ba  86 20 64 75 6f 64 75 6f  |......... duoduo|
+00000002835a3820: 20 e6 8c 89 e9 92 ae 00  00 00 00 00 00 00 00 00  | ...............|
+0x515b8      ldr	x0, [sp, #0x48]   ;r[sp_312=0x16f4a11b0] 
+   mem[r]_94 addr[ 0x16f4a11f8 ] size:8 value:0x22ad627b8
+	 w[x0_313=0x22ad627b8 ]
+Hexdump for x0 at address 0x22ad627b8:
+000000022ad627b8: 2f 28 d6 2a 02 00 00 00  00 00 00 00 00 00 00 00  |/(.*............|
+000000022ad627c8: 0a 00 02 00 00 00 00 00  2f 28 d6 2a 02 00 00 00  |......../(.*....|
+0x515bc      mov	x9, sp   ;r[sp_314=0x16f4a11b0] 
+	 w[x9_315=0x16f4a11b0 ]
+Hexdump for x9 at address 0x16f4a11b0:
+000000016f4a11b0: f0 d7 c0 00 01 00 00 00  9e b5 09 01 01 00 00 00  |................|
+000000016f4a11c0: 30 c0 82 2b 01 00 00 00  00 de 81 01 01 00 00 00  |0..+............|
+0x515c0      str	x10, [x9]   ;r[x10_316=0x2811ca591] r[x9_317=0x16f4a11b0] 
+   mem[w]_95 addr[ 0x16f4a11b0 ] size:8 value:0x2811ca591
+0x515c4      str	x8, [x9, #8]   ;r[x8_318=0x2835a3810] r[x9_319=0x16f4a11b0] 
+   mem[w]_96 addr[ 0x16f4a11b8 ] size:8 value:0x2835a3810
+0x515c8      adrp	x1, #0x101080000   ;
+	 w[x1_320=0x101080000 ]
+Hexdump for x1 at address 0x101080000:
+0000000101080000: d0 37 06 00 83 79 02 00  a8 5e ef ff cc 37 06 00  |.7...y...^...7..|
+0000000101080010: 77 79 02 00 c8 5e ef ff  38 2c 06 00 43 6b 02 00  |wy...^..8,..Ck..|
+0x515cc      add	x1, x1, #0x4e0   ;r[x1_321=0x101080000] 
+	 w[x1_322=0x1010804e0 ]
+Hexdump for x1 at address 0x1010804e0:
+00000001010804e0: 25 73 20 2d 20 25 73 0a  00 73 6c 69 65 6e 63 65  |%s - %s..slience|
+00000001010804f0: 00 6d 70 33 00 63 6f 6d  2e 79 6f 75 72 61 70 70  |.mp3.com.yourapp|
+0x515d0      bl	#0x101067e84(0x177e84)   ;
+0x177e84     adrp	x16, #0x1010b5000   ;
+	 w[x16_323=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x177e88     ldr	x16, [x16, #0x138]   ;r[x16_324=0x1010b5000] 
+   mem[r]_97 addr[ 0x1010b5138 ] size:8 value:0x1dbd1ebdc
+	 w[x16_325=0x1dbd1ebdc ]
+Hexdump for x16 at address 0x1dbd1ebdc:
+00000001dbd1ebdc: 7f 23 03 d5 ff 83 00 d1  fd 7b 01 a9 fd 43 00 91  |.#.......{...C..|
+00000001dbd1ebec: e2 03 01 aa a8 43 00 91  e8 07 00 f9 28 82 27 b0  |.....C......(.'.|
+0x177e8c     br	x16   ;r[x16_326=0x1dbd1ebdc] 
+call addr: 1dbd1ebdc [libsystem_c.dylib!fprintf]
+0x515d4      ldur	x0, [x29, #-0x40]   ;r[fp_327=0x16f4a1240] 
+   mem[r]_98 addr[ 0x16f4a1200 ] size:8 value:0x2804d9580
+	 w[x0_328=0x2804d9580 ]
+Hexdump for x0 at address 0x2804d9580:
+00000002804d9580: 89 48 d7 2a 02 00 00 01  90 07 00 00 03 00 00 00  |.H.*............|
+00000002804d9590: 0d 00 00 00 00 00 00 00  b9 70 fb 51 86 4e 20 00  |.........p.Q.N .|
+0x515d8      bl	#0x101068130(0x178130)   ;
+0x178130     adrp	x16, #0x1010b5000   ;
+	 w[x16_329=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x178134     ldr	x16, [x16, #0x3e8]   ;r[x16_330=0x1010b5000] 
+   mem[r]_99 addr[ 0x1010b53e8 ] size:8 value:0x1cda27544
+	 w[x16_331=0x1cda27544 ]
+Hexdump for x16 at address 0x1cda27544:
+00000001cda27544: 00 00 00 ea 6d ff ff 54  10 00 40 f9 02 82 7d 92  |....m..T..@...}.|
+00000001cda27554: 51 10 40 f9 11 03 10 36  d0 03 00 36 11 fe 77 d3  |Q.@....6...6..w.|
+0x178138     br	x16   ;r[x16_332=0x1cda27544] 
+call addr: 1cda27544 [libobjc.A.dylib!objc_release]
+0x515dc      ldur	x0, [x29, #-0x38]   ;r[fp_333=0x16f4a1240] 
+   mem[r]_100 addr[ 0x16f4a1208 ] size:8 value:0x16f4a1220
+	 w[x0_334=0x16f4a1220 ]
+Hexdump for x0 at address 0x16f4a1220:
+000000016f4a1220: 80 a5 1c 81 02 00 00 00  d0 b9 33 01 01 00 00 00  |..........3.....|
+000000016f4a1230: 9e b5 09 01 01 00 00 00  f0 d7 c0 00 01 00 00 00  |................|
+0x515e0      mov	x1, #0   ;
+	 w[x1_335=0x0 ]
+0x515e4      stur	x1, [x29, #-0x28]   ;r[x1_336=0x0] r[fp_337=0x16f4a1240] 
+   mem[w]_101 addr[ 0x16f4a1218 ] size:8 value:0x0
+0x515e8      bl	#0x10106819c(0x17819c)   ;
+0x17819c     adrp	x16, #0x1010b5000   ;
+	 w[x16_338=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x1781a0     ldr	x16, [x16, #0x430]   ;r[x16_339=0x1010b5000] 
+   mem[r]_102 addr[ 0x1010b5430 ] size:8 value:0x1cda2d0b0
+	 w[x16_340=0x1cda2d0b0 ]
+Hexdump for x16 at address 0x1cda2d0b0:
+00000001cda2d0b0: 7f 23 03 d5 f6 57 bd a9  f4 4f 01 a9 fd 7b 02 a9  |.#...W...O...{..|
+00000001cda2d0c0: fd 83 00 91 14 00 40 f9  9f 02 01 eb e0 01 00 54  |......@........T|
+0x1781a4     br	x16   ;r[x16_341=0x1cda2d0b0] 
+call addr: 1cda2d0b0 [libobjc.A.dylib!objc_storeStrong]
+0x515ec      ldur	x0, [x29, #-0x30]   ;r[fp_342=0x16f4a1240] 
+   mem[r]_103 addr[ 0x16f4a1210 ] size:8 value:0x16f4a1228
+	 w[x0_343=0x16f4a1228 ]
+Hexdump for x0 at address 0x16f4a1228:
+000000016f4a1228: d0 b9 33 01 01 00 00 00  9e b5 09 01 01 00 00 00  |..3.............|
+000000016f4a1238: f0 d7 c0 00 01 00 00 00  70 12 4a 6f 01 00 00 00  |........p.Jo....|
+0x515f0      ldur	x1, [x29, #-0x28]   ;r[fp_344=0x16f4a1240] 
+   mem[r]_104 addr[ 0x16f4a1218 ] size:8 value:0x0
+	 w[x1_345=0x0 ]
+0x515f4      bl	#0x10106819c(0x17819c)   ;
+0x17819c     adrp	x16, #0x1010b5000   ;
+	 w[x16_346=0x1010b5000 ]
+Hexdump for x16 at address 0x1010b5000:
+00000001010b5000: 50 32 d0 db 01 00 00 00  4c 30 d0 db 01 00 00 00  |P2......L0......|
+00000001010b5010: 00 2f d0 db 01 00 00 00  a8 0b ce db 01 00 00 00  |./..............|
+0x1781a0     ldr	x16, [x16, #0x430]   ;r[x16_347=0x1010b5000] 
+   mem[r]_105 addr[ 0x1010b5430 ] size:8 value:0x1cda2d0b0
+	 w[x16_348=0x1cda2d0b0 ]
+Hexdump for x16 at address 0x1cda2d0b0:
+00000001cda2d0b0: 7f 23 03 d5 f6 57 bd a9  f4 4f 01 a9 fd 7b 02 a9  |.#...W...O...{..|
+00000001cda2d0c0: fd 83 00 91 14 00 40 f9  9f 02 01 eb e0 01 00 54  |......@........T|
+0x1781a4     br	x16   ;r[x16_349=0x1cda2d0b0] 
+call addr: 1cda2d0b0 [libobjc.A.dylib!objc_storeStrong]
+0x515f8      ldp	x29, x30, [sp, #0x90]   ;r[sp_350=0x16f4a11b0] 
+   mem[r]_106 addr[ 0x16f4a1240 ] size:8 value:0x16f4a1270, mem[r]_107 addr[ 0x16f4a1248 ] size:8 value:0x12b82c00c
+	 w[fp_351=0x16f4a1270 lr_352=0x12b82c00c ]
+Hexdump for fp at address 0x16f4a1270:
+000000016f4a1270: d0 12 4a 6f 01 00 00 00  34 3a b0 d6 81 17 00 f9  |..Jo....4:......|
+000000016f4a1280: 00 00 00 00 00 00 00 00  0d 00 af f2 07 f0 90 be  |................|
+String for lr at address 0x12b82c00c : q
+0x515fc      add	sp, sp, #0xa0   ;r[sp_353=0x16f4a11b0] 
+	 w[sp_354=0x16f4a1250 ]
+Hexdump for sp at address 0x16f4a1250:
+000000016f4a1250: 00 00 a9 82 02 00 00 00  9e b5 09 01 01 00 00 00  |................|
+000000016f4a1260: 40 cd d0 05 01 00 00 00  f0 d7 c0 00 01 00 00 00  |@...............|
+0x51600      ret	   ;

@@ -31,8 +31,13 @@ std::string LoggerManager::get_log_directory() {
 void LoggerManager::set_enable_to_file(bool enable, const std::string& file_name) {
     if (enable) {
         if (trace_file_name.empty()) {
-            std::string trace_dir = get_log_directory();
-            trace_file_name = trace_dir + file_name;
+            // 如果传入的是完整路径（以 / 开头），直接使用；否则拼接默认目录
+            if (!file_name.empty() && file_name[0] == '/') {
+                trace_file_name = file_name;
+            } else {
+                std::string trace_dir = get_log_directory();
+                trace_file_name = trace_dir + file_name;
+            }
             trace_out.open(trace_file_name, std::ios::out);
             if (trace_out.is_open()) {
                 LOGI("Trace file opened: %s", trace_file_name.c_str());
