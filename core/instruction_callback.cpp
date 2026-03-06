@@ -10,6 +10,7 @@
 #include <vector>
 #include "common.h"
 #include "instruction_tracer_manager.h"
+#include "objc_utils.h"
 
 // ==================== 寄存器值获取 ====================
 
@@ -755,12 +756,40 @@ void instruction_callback(GumCpuContext* context, void* user_data) {
 
                 const char* sym_name = dl_info.dli_sname;
                 if (sym_name == nullptr) {
-                    // 无符号名时显示偏移
                     std::ostringstream oss;
                     oss << "sub_" << std::hex << (jmp_addr - (uint64_t)(uintptr_t)dl_info.dli_fbase);
                     call_info << "call addr: " << std::hex << jmp_addr << " [" << lib_name << "!" << oss.str() << "]";
                 } else {
                     call_info << "call addr: " << std::hex << jmp_addr << " [" << lib_name << "!" << sym_name << "]";
+
+                    // objc_msgSend 特殊处理: 解析 x0(self) + x1(SEL) → 方法签名
+                    if (strncmp(sym_name, "objc_msgSend", 12) == 0 &&
+                        (sym_name[12] == '\0' || sym_name[12] == 'S')) {
+                        uint64_t x0_val = 0, x1_val = 0;
+                        get_register_value(ARM64_REG_X0, ctx, x0_val);
+                        get_register_value(ARM64_REG_X1, ctx, x1_val);
+                        std::string objc_method = ObjCUtils::resolve_msg_send(
+                            (uintptr_t)x0_val, (uintptr_t)x1_val);
+                        if (!objc_method.empty()) {
+                            call_info << " → " << objc_method;
+                        }
+                    }
+                    // objc_opt_* / objc_alloc* 系列: 编译器优化的 ObjC 调用，x0=Class
+                    else if (strncmp(sym_name, "objc_opt_", 9) == 0 ||
+                             strncmp(sym_name, "objc_alloc", 10) == 0 ||
+                             strcmp(sym_name, "objc_autoreleaseReturnValue") == 0 ||
+                             strcmp(sym_name, "objc_retainAutoreleasedReturnValue") == 0) {
+                        uint64_t x0_val = 0;
+                        get_register_value(ARM64_REG_X0, ctx, x0_val);
+                        std::string class_name = ObjCUtils::get_class_name((uintptr_t)x0_val);
+                        if (!class_name.empty()) {
+                            // 从符号名提取操作: objc_opt_new → new, objc_alloc_init → alloc_init
+                            const char* op = sym_name;
+                            if (strncmp(op, "objc_opt_", 9) == 0) op += 9;
+                            else if (strncmp(op, "objc_", 5) == 0) op += 5;
+                            call_info << " → +[" << class_name << " " << op << "]";
+                        }
+                    }
                 }
             }
         }

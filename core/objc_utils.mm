@@ -42,3 +42,35 @@ std::string ObjCUtils::get_class_name(uintptr_t address) {
 
     return "";
 }
+
+std::string ObjCUtils::resolve_msg_send(uintptr_t self_ptr, uintptr_t sel_ptr) {
+    if (self_ptr == 0 || sel_ptr == 0) return "";
+
+    @try {
+        // SEL 在 arm64 上就是 const char*
+        const char* sel_name = (const char*)sel_ptr;
+        if (sel_name == nullptr || sel_name[0] == '\0') return "";
+
+        // 从 x0 获取类信息
+        id obj = (__bridge id)(void*)self_ptr;
+        Class cls = object_getClass(obj);
+        if (cls == nil) return "";
+
+        const char* class_name = class_getName(cls);
+        if (class_name == nullptr) return "";
+
+        // metaclass → 类方法 (+), 否则实例方法 (-)
+        bool is_class_method = class_isMetaClass(cls);
+
+        std::string result;
+        result.reserve(128);
+        result += is_class_method ? "+[" : "-[";
+        result += class_name;
+        result += " ";
+        result += sel_name;
+        result += "]";
+        return result;
+    } @catch (...) {
+        return "";
+    }
+}
