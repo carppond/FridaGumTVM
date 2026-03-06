@@ -14,7 +14,7 @@ core/                           # 核心 C++/ObjC 实现
 ├── custom_hook.h/cpp           # Interceptor enter/leave 钩子，控制 follow/unfollow
 ├── logger_manager.h/cpp        # 文件 I/O (256KB缓冲)、vm_read_overwrite 安全读、hexdump
 ├── macho_utils.h/cpp           # Mach-O 解析 __stubs/__stub_helper 段
-├── objc_utils.h/mm             # ObjC 运行时方法解析（.mm 因 ObjC 语法）
+├── objc_utils.h/mm             # ObjC 运行时: resolve_msg_send + get_class_name（.mm 因 ObjC 语法）
 └── hex_dump.h/cpp              # 十六进制 dump 格式化
 scripts/
 ├── build_ios.sh                # 构建脚本（cmake + ldid 签名）
@@ -101,7 +101,9 @@ frida -U <进程名> -l scripts/gumTrace_ios.js
 0x1234      mov    x0, x1   ;r[x1_1=0x400000]
    w[x0_1=0x400000]
 0x1238      bl     #0x2000  (0x2000)
-call addr: 0x2000 [SomeLib!some_function]
+call addr: 0x2000 [libobjc!objc_msgSend] → -[NSString length]
+call addr: 0x3000 [libobjc!objc_opt_new] → +[NSObject new]
+call addr: 0x4000 [SomeLib!some_function]
 ---------- >> SomeSDK (0x102a00000) ----------
 [SomeSDK] 0x1234   ldr    x2, [x3, #8]   ;r[x3_1=0x400100]
    mem[r]_1 addr[ 0x400108 ] size:8 value:0x123456789abcdef
